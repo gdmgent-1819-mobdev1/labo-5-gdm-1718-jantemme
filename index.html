@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./Css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Vampiro+One" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
+
+    <title>Bloggers</title>
+</head>
+<body>
+    <div class="header" > 
+        <h1>Bloggers</h1>
+    </div>
+    <div class="container" id="forms">
+        <div class="signup form" >
+            <h2>Sign up</h2>
+            <form action="">
+                <label for="signup_email">Email</label>
+                <input type="email" name="signup_email" id="signup_email">
+                <label for="signup_password">Password</label>
+                <input type="password" name="signup_password" id="signup_password">
+                <button type="submit" id="btn_signup">Sign Up</button>
+            </form>
+            <p class="error" id="signup_error"></p>
+        </div>
+        <div class="login form" >
+            <h2>Login</h2>
+            <form action="">
+                <label for="login_email">Email</label>
+                <input type="email" name="login_email" id="login_email">
+                <label for="login_password">Password</label>
+                <input type="password" name="login_password" id="login_password">
+                <button type="submit" id="btn_login">Login</button>
+            </form>
+            <p class="error" id="login_error"></p>
+        </div>
+    </div>
+
+    <div class="posts_container">
+        <div class="posts" id="posts"></div>
+        <div class="editor" id='editor'>
+            <form action="">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title"><br>
+                <textarea name="editor1" id="editor1" rows="10" cols="80">
+                    Blogpost content goes here!
+                </textarea><br>
+                <button type="submit" id="btn_publish">Publish post</button>
+            </form>
+            <p class="error" id="errors"></p>
+        </div>
+        <h1>Posts</h1> 
+        <div id='blogposts'> </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-firestore.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-messaging.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-functions.js"></script> -->
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAOlQpSJwHzOt-BGHrSA6OwFzghzKhWT6E",
+        authDomain: "labo5-9a24a.firebaseapp.com",
+        databaseURL: "https://labo5-9a24a.firebaseio.com",
+        projectId: "labo5-9a24a",
+        storageBucket: "labo5-9a24a.appspot.com",
+        messagingSenderId: "716146625871"
+    };
+    firebase.initializeApp(config);
+    </script>
+
+    <script src="./Js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #EFEFEF;
+    color: #A9A9A9;
+}
+
+.container{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header{
+    background-color: #A9A9A9;
+    color: #EFEFEF;
+    font-family: 'Vampiro One', cursive;
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+.form{
+    background-color: #CAEBF2;
+    padding: 10px;
+    margin: 20px;
+    width: 30%;
+    -webkit-transition: -webkit-box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: -webkit-box-shadow 0.5s;
+    border-radius: 5px;
+}
+
+.form:hover{
+    -webkit-box-shadow: 7px 12px 32px -1px rgba(97,97,97,0.54);
+    -moz-box-shadow: 7px 12px 32px -1px rgba(97,97,97,0.54);
+    box-shadow: 7px 12px 32px -1px rgba(97,97,97,0.54);
+}
+
+.posts{
+    display: none;
+}
+
+.blogpost {
+    margin-bottom: 30px;
+  }
+
+.welcome{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 100%;
+}
+
+.editor{
+    display: none;
+    margin-top: 10px;
+}
+
+.posts_container{
+    margin: 0% 10% 0% 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 60px;
+}
+
+h2{
+    margin-top: 10px;
+}
+
+p{
+    margin: 10px;
+}
+
+button{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FF3B3F;
+    color: #EFEFEF;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
