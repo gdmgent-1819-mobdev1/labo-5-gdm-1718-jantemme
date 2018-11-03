@@ -90,7 +90,6 @@
     .then(function() {
         document.getElementById('posts').style.display = "none";
         document.getElementById('editor').style.display = "none";
-        document.getElementById('blogposts').style.display = "none";
         document.getElementById('forms').style.display = "flex";
 
     })
