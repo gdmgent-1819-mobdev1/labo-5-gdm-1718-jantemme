@@ -24,7 +24,7 @@
   function showPost(post) {
     let elem = document.createElement('div');
     elem.className = 'blogpost';
-    elem.innerHTML = "<h2 class=\"title\">" + post.title + "</h2>" + "<p>Published on " + post.publishedOn + "</p><hr>" + post.content
+    elem.innerHTML = "<h2 class=\"title\">" + post.title + "</h2>" + "<p>Published on " + post.publishedOn + " by " + post.user + "</p> <hr>" + post.content + "<button> Bewerk </button>"
   
     document.getElementById("blogposts").appendChild(elem);
   }
@@ -39,27 +39,28 @@
 
       CKEDITOR.replace('editor1');
       document.getElementById('btn_publish').addEventListener('click', publishPost, false);
-      /*let blogpostRef = firebase.database().ref('posts/');
-      blogpostRef.on('value', function (snapshot) {
-      document.getElementById("blogposts").innerHTML = '';
-      snapshot.forEach(function (data) {
-      showPost(data.val());
-      });
-    });*/
   }
       
     function publishPost(e) {
         e.preventDefault();
-      
-        let title = document.getElementById("title").value;
-        let content = CKEDITOR.instances.editor1.getData();
-        let datetime = new Date().toLocaleString();
-      
-        firebase.database().ref('posts/').push({
-          title: title,
-          content: content,
-          publishedOn: datetime
-        });
+        if(document.getElementById('title').value != "")
+        {
+            let title = document.getElementById("title").value;
+            let content = CKEDITOR.instances.editor1.getData();
+            let datetime = new Date().toLocaleString();
+            let user = firebase.auth().currentUser.email;
+        
+            firebase.database().ref('posts/').push({
+            title: title,
+            content: content,
+            publishedOn: datetime,
+            user: user
+            });
+            document.getElementById('title').style.borderColor = 'black';
+            sendNotification('Bericht geplaatst!');
+        }
+        else
+        document.getElementById('title').style.borderColor = 'red';
     }
   
   function login(e) {
